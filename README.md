@@ -38,7 +38,8 @@ To build out a tip calculator app and get it looking as close to the design as p
 ### Useful resources
 
 The list of resources:
-    1. 
+   - 1. 
+   - 2.
 
 ## Author
 Created by me...
