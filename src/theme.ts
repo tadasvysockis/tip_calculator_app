@@ -1,10 +1,8 @@
 import { orange } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 
-
-
 const strongCyan = "#26c0ab";
-const darkCyan = "#5e7a7d";
+const darkCyan = "#00494d";
 const darkGrayish1 = "#5e7a7d";
 const darkGrayish2 = "#7f9c9f";
 const lightGrayish1 = "#c5e4e7";
@@ -29,30 +27,66 @@ const theme = createTheme({
         }
     },
     typography:{
+        fontFamily: "Space Mono",
+        body1:{
+            margin: 0,
+            fontWeight: 400,
+            fontSize: '1.5rem',           
+        },
+        body2:{
+            margin: 0, 
+            fontWeight: 500,
+            fontSize: '1.5rem',
+        },
         h1:{
-            fontFamily: "Space Mono",
-            fontSize: "1.5rem",
-            fontStyle: "italic",
-            fontWeight: 700,
-            color: darkCyan
-            
+            margin: 0, 
+            fontWeight: 500,
+            fontSize: '1rem'
+
         },
         h2:{
-            fontFamily: "Space Mono",
-            fontSize: "1.5rem",
+            margin: 0, 
             fontWeight: 500,
-            color: darkCyan
+            fontSize: '1.5rem',
+            color: white
         },
         h3:{
-            fontFamily: "Space Mono",
-            fontSize: "1.5rem",
-            fontWeight: 400,
-            color: darkCyan
+            margin: 0,
+            fontWeight: 700,
+            fontSize: '1.5rem',
+            lineHeight: 1.5,
+            letterSpacing: "0.5em",
         },
+        h4:{
+            margin: 0, 
+            fontWeight: 700,
+            fontSize: '1rem'
+        },
+        h5:{
+            margin: 0, 
+            fontWeight: 500,
+            fontSize: '1.25rem',
+            color: white
+        },
+        h6:{
+            margin: 0, 
+            fontWeight: 700,
+            fontSize: '3rem',
+        }
+        
     },
     status: {
       danger: orange[500],
     },
+    components:{
+        MuiCssBaseline: {
+            styleOverrides:`
+                body {
+                    margin: 0;
+                }
+            `,
+        },
+    }
   });
 
 
