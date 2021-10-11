@@ -1,46 +1,33 @@
 import { FC } from 'react';
-import { createStyles, Grid, Theme } from '@mui/material';
+import { CssBaseline, Grid, ThemeProvider, Typography } from '@mui/material';
 
-import { WithStyles, withStyles } from '@mui/styles';
+import theme from '../theme';
+import { TipCalculator } from './tip_calculator';
+import { SxProps, Theme } from '@mui/system';
 
-const styles = ({ palette }: Theme) =>
-  createStyles({
-    root: {
-        /*background-color: #282c34;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: calc(10px + 2vmin);
-        color: white;*/
-      display: 'flex',
-      flexDirection: 'column',
-      backgroundColor: palette.common.lightGrayish1,
-      color: palette.primary.dark,
-      minHeight: '100vh',
-    },
-    "@global":{
-        "body":{
-          margin: 0
-        }
-      }
-  });
 
-  // declare props as an extension of the interface we just defined in the 'styles' variable. Any
-// other props can appear here. I've put one in as an example of how to use it.
-interface Props extends WithStyles<typeof styles> {
-    hi: string;
-}
-const MainPage: FC<Props> = (props) =>{
-    console.log(props);
-    const { classes } = props;
-    return(
-        <div className={classes.root}>
-
-        </div>
-    );
+const gridContainer: SxProps<Theme> = {
+  backgroundColor: 'common.lightGrayish1',
+  color: "primary.dark",
+  minHeight: '100vh'
 };
 
-// instrument the component with the CSS styles defined above, and export it.
-export default withStyles(styles)(MainPage);
+export const MainPage:FC<{}> = () =>{
+  return(
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Grid sx={gridContainer} container> 
+        <Grid item container spacing={3} direction="column" alignItems="center" justifyContent="center">
+          <Grid item>
+            <Typography variant="h3">
+              SPLI<br />TTER
+            </Typography>
+          </Grid>
+          <Grid item container direction="column" alignItems="center" justifyContent="center">
+            <TipCalculator />
+          </Grid>
+        </Grid>
+      </Grid>
+    </ThemeProvider> 
+  );
+};
