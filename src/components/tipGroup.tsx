@@ -20,11 +20,16 @@ export const TipGroup:FC<ITipGroupProps> = ({setTips, tips, setCustomTips, custo
 
     const handleCustomTips = (event: React.ChangeEvent<HTMLInputElement>) =>{
         const fieldValue = event.currentTarget.value;
-        const value = parseFloat(fieldValue);
-        setCustomTips(fieldValue);
-        if(value){
-            setTips(value);
-        }
+        if(!fieldValue){
+            setCustomTips(""); 
+            setTips(0);
+        }else{
+            const parsedValue = parseInt(fieldValue);
+            if (!isNaN(parsedValue)) { 
+                setTips(parsedValue);
+                setCustomTips(fieldValue);
+            }
+        }     
     };
     const buttons =[
         {name: "5", label:'5%'},
