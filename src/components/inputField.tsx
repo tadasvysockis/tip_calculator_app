@@ -21,7 +21,14 @@ const labelTextStyle:SxProps<Theme>={
 
 export const InputField:FC<IInputFieldProps> = ({label, fieldSymbol, value, onChange, errorMessage}) =>{
     const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>)=>{
-        onChange(event.target.value);
+        if(!event.currentTarget.value){
+            onChange(0); 
+        }else{
+            const parsedValue = parseInt(event.target.value);
+            if (!isNaN(parsedValue)) { 
+                onChange(parsedValue); 
+            }
+        }       
     }
     return (
         <FormControl variant="outlined" sx={{width:'100%'}}>

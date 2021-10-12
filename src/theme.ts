@@ -41,8 +41,8 @@ const theme = createTheme({
         h1:{
             margin: 0, 
             fontWeight: 500,
-            fontSize: '1rem'
-
+            fontSize: '1.25rem',
+            color: white
         },
         h2:{
             margin: 0, 
@@ -65,8 +65,7 @@ const theme = createTheme({
         h5:{
             margin: 0, 
             fontWeight: 500,
-            fontSize: '1.25rem',
-            color: white
+            fontSize: '1rem'
         },
         h6:{
             margin: 0, 

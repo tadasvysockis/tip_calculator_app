@@ -15,7 +15,10 @@ const resultText: SxProps<Theme> = {
 };
 
 const resultLabel:SxProps<Theme> = {
-    color:'common.lightGrayish1'
+    color:'common.lightGrayish1',
+    margin: 0, 
+    fontWeight: 500,
+    fontSize: '1rem'
 }
 
 export const Result:FC<IResultProps> = ({amount, total, handleReset}) =>{
@@ -28,9 +31,9 @@ export const Result:FC<IResultProps> = ({amount, total, handleReset}) =>{
             <Grid container rowGap={5} sx={{margin:'2rem'}} >
                 <Grid item container xs={12} alignItems="center" >
                     <Grid xs={6} item>
-                        <Typography variant="h5" sx={resultLargeStyle}>
+                        <Typography variant="h1" sx={resultLargeStyle}>
                             Tip Amount
-                            <Typography variant="h1" sx={resultLabelStyle}>
+                            <Typography sx={resultLabelStyle}>
                                 / person
                             </Typography>
                         </Typography>
@@ -43,9 +46,9 @@ export const Result:FC<IResultProps> = ({amount, total, handleReset}) =>{
                 </Grid>
                 <Grid item container xs={12} alignItems="center">
                     <Grid xs={6} item>
-                        <Typography variant="h5" sx={resultLargeStyle}>
+                        <Typography variant="h1" sx={resultLargeStyle}>
                             Total
-                            <Typography variant="h1" sx={resultLabelStyle}>
+                            <Typography sx={resultLabelStyle}>
                                 / person
                             </Typography>
                         </Typography>

@@ -15,7 +15,7 @@ interface ICalculatorPros {
     setCustomTips: (value: string) => void;
 }
 export const Calculator: FC<ICalculatorPros> = ({setTips, tips, bill, setBill, numberOfPeople, setNumberOfPeople, customTips, setCustomTips}) =>{
-    const errorMessage = numberOfPeople === 0 ? "Can't be zero" : undefined;
+    const errorMessage = numberOfPeople == 0 ? "Can't be zero" : undefined;
     return(
         <Grid container alignContent="space-between" direction="row" sx={{height:'95%'}}>
             <Grid item xs={12}>
