@@ -1,0 +1,16 @@
+{
+    "name": "Empty React App",
+    "short_name": "Empty",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#c5e4e7",
+    "description": "An empty react app for all pusposes",
+    "icons": [
+      {
+        "src": "favicon-32x32.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      }
+    ]
+  }
+  
