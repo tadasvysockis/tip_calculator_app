@@ -71,7 +71,7 @@ const theme = createTheme({
         h6:{
             margin: 0, 
             fontWeight: 700,
-            fontSize: '3rem',
+            fontSize: '2.5rem',
         }
         
     },
@@ -86,6 +86,23 @@ const theme = createTheme({
                 }
             `,
         },
+        MuiOutlinedInput:{
+            styleOverrides:{              
+                input:{
+                    textAlign: "right"
+                }  
+            }
+        },
+        MuiButton:{
+            styleOverrides:{
+                root:{
+                    width:'100%', 
+                    height:'51.5px', 
+                    backgroundColor: darkCyan
+                },
+                   
+            }
+        }
     }
   });
 

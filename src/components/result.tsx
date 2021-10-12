@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
 import { Button, Grid, Typography } from '@mui/material';
-import { InputField } from './inputField';
 
-export const Result:FC<{}> = () =>{
+interface IResultProps{
+    amount: string;
+    total: string;
+    handleReset: () => void;
+}
+
+export const Result:FC<IResultProps> = ({amount, total, handleReset}) =>{
     return(
         <Grid container alignContent="space-between">
             <Grid container rowGap={5} sx={{margin:'2rem'}} >
@@ -16,8 +21,8 @@ export const Result:FC<{}> = () =>{
                         </Typography>
                     </Grid>
                     <Grid xs={6} item>
-                        <Typography variant="h6" sx={{color:'primary.main'}}>
-                            $4.27
+                        <Typography variant="h6" sx={{color:'primary.main', textAlign:'end'}}>
+                            {"$"+amount}
                         </Typography>
                     </Grid>
                 </Grid>
@@ -31,14 +36,14 @@ export const Result:FC<{}> = () =>{
                         </Typography>
                     </Grid>
                     <Grid xs={6} item>
-                        <Typography variant="h6" sx={{color:'primary.main'}}>
-                            $32.79
+                        <Typography variant="h6" sx={{color:'primary.main', textAlign:'end'}}>
+                            {"$"+total}
                         </Typography>
                     </Grid>
                 </Grid>
                 <Grid item container xs={12} sx={{marginTop:'4rem'}}>
-                    <Grid xs={12} item sx={{height:'3rem'}}>
-                        <Button variant="contained" sx={{width:'100%', height:'100%'}}>
+                    <Grid xs={12} item sx={{height:'4rem'}}>
+                        <Button variant="contained" sx={{ backgroundColor: 'primary.main', width:'100%', height:'100%'}} onClick={handleReset}>
                             <Typography variant="body2">RESET</Typography>
                         </Button>
                     </Grid>

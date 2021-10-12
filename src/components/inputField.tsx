@@ -1,4 +1,4 @@
-import { FormControl, FormHelperText, InputAdornment, InputBaseComponentProps, OutlinedInput } from '@mui/material';
+import { FormControl, FormHelperText, InputAdornment, OutlinedInput } from '@mui/material';
 import React, {FC} from 'react';
 import PersonIcon from '@mui/icons-material/Person';
 import { SxProps, Theme } from '@mui/system';
@@ -11,12 +11,6 @@ interface IInputFieldProps{
     defaultValue ?: string;
     errorMessage ?: string | undefined;
     
-}
-
-const inputProps: InputBaseComponentProps  = {
-    'aria-label': 'bill',
-    style: { textAlign: "right" },
-
 }
 
 const labelTextStyle:SxProps<Theme>={
@@ -50,7 +44,6 @@ export const InputField:FC<IInputFieldProps> = ({label, fieldSymbol, value, onCh
                         {fieldSymbol ?? <PersonIcon />}
                     </InputAdornment>}
                 sx={inputStyle}
-                inputProps={inputProps}
                 value={value}
                 error={errorMessage ? true : undefined}
                 onChange={handleValueChange}
