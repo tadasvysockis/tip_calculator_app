@@ -35,7 +35,7 @@ export const TipCalculator:FC<{}> = () => {
     };
 
     const getAmount = (bill:number, tips: number, numberOfPeople: number) =>{
-        let amount: string= "0.0";
+        let amount: string= "0.00";
         if(numberOfPeople !== 0){
             let result = (bill * (tips/100))/numberOfPeople;
             amount = result.toFixed(2);
@@ -44,7 +44,7 @@ export const TipCalculator:FC<{}> = () => {
     };
 
     const getTotal = (bill:number, tips: number, numberOfPeople: number) =>{
-        let total: string= "0.0";
+        let total: string= "0.00";
         if(numberOfPeople !== 0){
             let result = (bill * (1+(tips/100)))/numberOfPeople;
             total = result.toFixed(2);
