@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { CssBaseline, Grid, ThemeProvider, Typography, useMediaQuery } from '@mui/material';
+import { CssBaseline, Grid, ThemeProvider, Typography } from '@mui/material';
 
 import theme from '../theme';
 import { TipCalculator } from './tip_calculator';
@@ -12,14 +12,13 @@ const gridContainer: SxProps<Theme> = {
 };
 
 export const MainPage:FC<{}> = () =>{
-  const matches = useMediaQuery('(min-width:970px)');
   return(
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Grid sx={gridContainer} container> 
+      <Grid sx={gridContainer} container alignContent="space-evenly"> 
         <Grid item container alignItems="center" justifyContent="center">
           <Grid item>
-            <Typography variant="h3" sx={ !matches ? {marginBottom:'3rem'} : {}}>
+            <Typography variant="h3" sx={{marginBottom:'3rem'}}>
               SPLI<br />TTER
             </Typography>
           </Grid>
