@@ -28,7 +28,6 @@ export const Calculator: FC<ICalculatorPros> = ({setTips, tips, bill, setBill, n
             <Grid item xs={12}>
                 <InputField 
                     errorMessage={errorMessage} 
-                    defaultValue="1" 
                     value={numberOfPeople} 
                     label="Number of People" 
                     onChange={setNumberOfPeople} 

@@ -90,7 +90,13 @@ const theme = createTheme({
             styleOverrides:{              
                 input:{
                     textAlign: "right"
-                }  
+                },
+                root:{
+                    backgroundColor: lightGrayish2, 
+                    ".MuiOutlinedInput-notchedOutline": {
+                        borderColor: lightGrayish2
+                    }   
+                } 
             }
         },
         MuiButton:{
@@ -102,7 +108,7 @@ const theme = createTheme({
                 },
                    
             }
-        }
+        },
     }
   });
 

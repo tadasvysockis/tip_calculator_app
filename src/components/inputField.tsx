@@ -8,7 +8,6 @@ interface IInputFieldProps{
     value: any;
     onChange:(value: any) => void;
     fieldSymbol ?: string;
-    defaultValue ?: string;
     errorMessage ?: string | undefined;
     
 }
@@ -19,15 +18,8 @@ const labelTextStyle:SxProps<Theme>={
     fontWeight: 700, 
     color:'primary.dark' 
 }
-const inputStyle:SxProps<Theme>={
-    backgroundColor: 'common.lightGrayish2', 
-    borderRadius:'10px', 
-    ".MuiOutlinedInput-notchedOutline": {
-        borderColor: 'common.lightGrayish2'
-    } 
-}
 
-export const InputField:FC<IInputFieldProps> = ({label, fieldSymbol, value, onChange, defaultValue, errorMessage}) =>{
+export const InputField:FC<IInputFieldProps> = ({label, fieldSymbol, value, onChange, errorMessage}) =>{
     const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>)=>{
         onChange(event.target.value);
     }
@@ -37,13 +29,11 @@ export const InputField:FC<IInputFieldProps> = ({label, fieldSymbol, value, onCh
                 <span style={{display:'inline',float:"left"}}>{label}</span>
                 <span style={{display:'inline', color:'red', float:"right"}}>{errorMessage}</span>
             </FormHelperText>
-            
             <OutlinedInput
                 startAdornment={
                     <InputAdornment position="start">
                         {fieldSymbol ?? <PersonIcon />}
                     </InputAdornment>}
-                sx={inputStyle}
                 value={value}
                 error={errorMessage ? true : undefined}
                 onChange={handleValueChange}
