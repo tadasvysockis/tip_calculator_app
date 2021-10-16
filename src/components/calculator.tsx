@@ -19,7 +19,13 @@ export const Calculator: FC<ICalculatorPros> = ({setTips, tips, bill, setBill, n
     return(
         <Grid container alignContent="space-between" direction="row" sx={{height:'95%'}}>
             <Grid item xs={12}>
-                <InputField value={bill} label="Bill" fieldSymbol="$" onChange={setBill} />
+                <InputField 
+                    key="billValue" 
+                    value={bill} 
+                    label="Bill" 
+                    fieldSymbol="$" 
+                    onChange={setBill} 
+                />
             </Grid>
             <Grid item xs={12}>
                 <Typography variant="h4" sx={{marginBottom:'1rem'}}>Select Tip %</Typography>

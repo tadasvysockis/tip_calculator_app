@@ -39,7 +39,7 @@ export const Result:FC<IResultProps> = ({amount, total, handleReset}) =>{
                         </Typography>
                     </Grid>
                     <Grid xs={6} item>
-                        <Typography variant="h6" sx={resultStyle}>
+                        <Typography id="Tip" variant="h6" sx={resultStyle}>
                             {"$"+amount}
                         </Typography>
                     </Grid>
@@ -54,7 +54,7 @@ export const Result:FC<IResultProps> = ({amount, total, handleReset}) =>{
                         </Typography>
                     </Grid>
                     <Grid xs={6} item>
-                        <Typography variant="h6" sx={resultStyle}>
+                        <Typography id="Total" variant="h6" sx={resultStyle}>
                             {"$"+total}
                         </Typography>
                     </Grid>
@@ -62,7 +62,7 @@ export const Result:FC<IResultProps> = ({amount, total, handleReset}) =>{
                 <Grid item container xs={12} sx={{marginTop:'4rem'}}>
                     <Grid xs={12} item sx={{height:'4rem'}}>
                         <Button variant="contained" sx={{ backgroundColor: 'primary.main', width:'100%', height:'100%'}} onClick={handleReset}>
-                            <Typography variant="body2">RESET</Typography>
+                            <Typography id="Reset" variant="body2">RESET</Typography>
                         </Button>
                     </Grid>
                 </Grid>

@@ -21,22 +21,27 @@ const labelTextStyle:SxProps<Theme>={
 
 export const InputField:FC<IInputFieldProps> = ({label, fieldSymbol, value, onChange, errorMessage}) =>{
     const handleValueChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>)=>{
-        if(!event.currentTarget.value){
-            onChange(0); 
+        if(label === "Bill"){
+            onChange(event.target.value); 
         }else{
-            const parsedValue = parseInt(event.target.value);
-            if (!isNaN(parsedValue)) { 
-                onChange(parsedValue); 
-            }
+            if(!event.currentTarget.value){
+                onChange(0); 
+            }else{
+                const parsedValue = parseInt(event.target.value);
+                if (!isNaN(parsedValue)) { 
+                    onChange(parsedValue); 
+                }
+            }            
         }       
     }
     return (
         <FormControl variant="outlined" sx={{width:'100%'}}>
             <FormHelperText sx={labelTextStyle} >
                 <span style={{display:'inline',float:"left"}}>{label}</span>
-                <span style={{display:'inline', color:'red', float:"right"}}>{errorMessage}</span>
+                <span id={label.split(' ')[0]+'Error'} style={{display:'inline', color:'red', float:"right"}}>{errorMessage}</span>
             </FormHelperText>
             <OutlinedInput
+                id={label.split(' ')[0]}
                 startAdornment={
                     <InputAdornment position="start">
                         {fieldSymbol ?? <PersonIcon />}

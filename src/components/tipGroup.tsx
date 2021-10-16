@@ -56,6 +56,7 @@ export const TipGroup:FC<ITipGroupProps> = ({setTips, tips, setCustomTips, custo
                 <TextField 
                     size="small" 
                     label="Custom" 
+                    id="Custom"
                     onChange={handleCustomTips}
                     value={customTips}
                 />               
