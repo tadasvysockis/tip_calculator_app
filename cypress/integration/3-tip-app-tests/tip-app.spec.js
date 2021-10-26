@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("My first test", ()=>{
     beforeEach(()=>{
-        cy.visit('http://localhost:3000/');   
+        cy.visit('https://tadasvysockis.github.io/tip_calculator_app/');   
     });
     
     it("Random unit test", ()=>{
